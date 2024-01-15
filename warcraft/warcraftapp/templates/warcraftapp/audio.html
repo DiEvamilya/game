@@ -1,0 +1,20 @@
+{% extends 'warcraftapp/base.html' %}
+
+{% block content %}
+
+
+<h3>{% for c in categories %}
+    <a href="/audio/?category={{ c.id }}">{{ c.name }}</a>
+{% endfor %}</h3>
+
+{% if audios %}
+    {% for audio in audios %}
+        <p>{{ audio.title }}</p>
+        <audio src="{{ audio.audio.url }}" controls></audio>
+    {% endfor %}
+{% else %}
+
+{% endif %}
+
+{% endblock %}
+

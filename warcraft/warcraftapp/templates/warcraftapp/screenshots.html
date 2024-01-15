@@ -1,0 +1,18 @@
+{% extends 'warcraftapp/base.html' %}
+{% block image %}
+{% endblock %}
+
+
+{% block content %}
+<h2>Картинки</h2>
+<div>
+    {% for scr in screenshots %}
+    <div class="img">
+    <img class="foto" src="{{ scr.image.url }}">
+    <span>{{ scr.title }}</span>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
+

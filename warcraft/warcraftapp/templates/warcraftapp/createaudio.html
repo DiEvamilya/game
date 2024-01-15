@@ -1,0 +1,17 @@
+{% extends 'warcraftapp/base.html' %}
+
+
+{% block content %}
+<h2>Добавить аудио</h2>
+
+<div>
+
+<form method="POST" name="form1" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{ form1.as_p }}
+  <input type="submit" value="Сохранить">
+</form>
+
+</div>
+
+{% endblock %}

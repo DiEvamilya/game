@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css'%}">
+    <script defer src="{% static 'js/my.js'%}"></script>
+
+</head>
+<body>
+
+<nav>
+    {% block image %}
+        <img id="banner" src="{% static 'img/banner.jpeg' %}">
+    {% endblock %}
+    <nav class="nav">
+    <h2><a href="{% url 'start' %}">Главная страница</a></h2>
+    <h2><a href=" {% url 'about_game' %} ">Об игре</a></h2>
+    <h2><a href="{% url 'screenshots' %}">Картинки</a></h2>
+    <h2><a href="{% url 'video' %}">Видео</a></h2>
+    <h2><a href="{% url 'audio' %}">Аудио</a></h2>
+    <h2><a href="{% url 'create' %}">Добавить</a></h2>
+    </nav>
+</nav>
+{% block content%} {% endblock %}
+</body>
+</html>

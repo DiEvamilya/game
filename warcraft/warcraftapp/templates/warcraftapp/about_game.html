@@ -1,0 +1,8 @@
+{% extends 'warcraftapp/base.html' %}
+
+{% block content %}
+{% for g in game %}
+<h1>{{ g.title }}</h1>
+<p>{{ g.content }}</p>
+{% endfor %}
+{% endblock %}

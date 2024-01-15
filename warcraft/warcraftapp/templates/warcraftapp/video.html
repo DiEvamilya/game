@@ -1,0 +1,22 @@
+{% extends 'warcraftapp/base.html' %}
+
+{% block content %}
+
+
+<h3>{% for c in categories %}
+    <a href="/video/?category={{ c.id }}">{{ c.name }}</a>
+{% endfor %}</h3>
+
+{% if videos %}
+    {% for video in videos %}
+        <p>{{ video.title }}</p>
+            <video width="300px" height="200px" controls>
+                <source src="{{ video.video.url }}" type="video/mp4">
+            </video>
+
+    {% endfor %}
+{% else %}
+
+{% endif %}
+
+{% endblock %}
